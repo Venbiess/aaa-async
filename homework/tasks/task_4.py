@@ -1,4 +1,9 @@
+import asyncio
+order = []
+
+
 async def task_1(i: int):
+    order.append('1')
     if i == 0:
         return
 
@@ -9,6 +14,7 @@ async def task_1(i: int):
 
 
 async def task_2(i: int):
+    order.append('2')
     if i == 0:
         return
 
@@ -29,4 +35,4 @@ async def coroutines_execution_order(i: int = 42) -> int:
     # return 12212
     await task_1(i)
 
-    # YOUR CODE GOES HERE
+    return int(''.join(order))
